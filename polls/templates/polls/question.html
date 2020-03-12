@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz'</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+    </head>
+    <body>
+     <h1>"QUIZ"</h1>
+     
+    <form id="quiz" name="quiz" method="POST" action="{% url 'polls:check' question.pk%}">
+        {% csrf_token %}
+        {{ form }}
+        <p>{{question.question_text}}</p>
+        {% for answer in answers_list%}
+
+            {% if answer.question == question %}
+                <div>
+                    <input type="radio" id="Odp" name="odp" value="{{answer.is_valid}}" required>
+                    <label for="Odp">{{answer.text}}</label>
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+        {% if last %}
+            <button>Koniec</button>
+            {% else %}
+                <input type="submit" value="Dalej">
+        {% endif %}
+        
+        
+     </form>
+     
+
+    </body>
+</html>

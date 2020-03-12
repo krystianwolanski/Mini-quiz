@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz'</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+    </head>
+    <body>
+    <form style="padding:20px;" action="{% url 'polls:question' 1%}">
+        <input style="font-size:30px;" type="submit" value="Rozpocznij QUIZ" />
+    </form>
+ 
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz'</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+    </head>
+    <body>
+     <h2>Zdobyłeś {{punkty.pkt}} punktów</h2>
+   
+    <form action="{% url 'polls:index'%}">
+        <input type="submit" value="Koniec" />
+    </form>
+     
+
+    </body>
+</html>
